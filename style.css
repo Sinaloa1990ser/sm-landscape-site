@@ -145,7 +145,16 @@ a[href^="tel:"]{white-space:nowrap}
 .reviews-summary{margin:-.2rem 0 1.5rem;font-size:1.1rem;color:var(--muted)}
 .reviews-score{font-weight:700;color:var(--green)}
 .review-stars{color:#e0a800;letter-spacing:.08em}
-.review-grid{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:minmax(0,1fr)}
+.review-grid{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr);max-width:760px}
+.review-grid .review{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
+.review-grid .review.is-active{opacity:1;visibility:visible}
+.review-grid.no-js .review{grid-area:auto;opacity:1;visibility:visible;margin-bottom:1rem}
+.review-grid .review blockquote{font-size:1.12rem}
+.review-dots{display:flex;justify-content:center;gap:.6rem;margin:1.1rem 0 0}
+.review-dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--green);background:transparent;padding:0;cursor:pointer}
+.review-dots button[aria-current="true"]{background:var(--green)}
+.reviews .reviews-more{text-align:center}
+@media (prefers-reduced-motion:reduce){.review-grid .review{transition:none}}
 .review figure{margin:0;height:100%;display:flex;flex-direction:column;background:var(--cream);border-radius:var(--radius);border-top:5px solid var(--lime);padding:1.3rem 1.4rem 1.2rem;box-shadow:0 1px 3px rgba(0,0,0,.06)}
 .review blockquote{margin:0 0 1rem;flex:1;font-family:Georgia,"Times New Roman",serif;font-size:1.02rem;line-height:1.6;color:var(--ink)}
 .review blockquote p{margin:0 0 .8em}
@@ -156,5 +165,3 @@ a[href^="tel:"]{white-space:nowrap}
 .review-date{font-size:.9rem;color:var(--muted)}
 .reviews-more{margin:1.5rem 0 0}
 .reviews-more a{font-weight:700}
-@media (min-width:640px){.review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (min-width:1000px){.review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}

@@ -152,7 +152,7 @@
     <div class="wrap">
       <h2 id="reviews-h">What Our Customers Say</h2>
       <p class="reviews-summary"><span class="reviews-score">5.0 <span class="review-stars" aria-hidden="true">★</span> on Google</span> &middot; 10 reviews</p>
-      <ul class="review-grid">
+      <ul class="review-grid no-js" aria-live="polite">
         <li class="review">
           <figure>
             <blockquote>
@@ -227,6 +227,7 @@
           </figure>
         </li>
       </ul>
+      <div class="review-dots" aria-label="Choose a review"></div>
       <p class="reviews-more"><a href="https://www.google.com/maps/place/S%26M+landscape/@34.1680349,-111.9307474,7z/data=!4m8!3m7!1s0xa1b921cea5fc3849:0x9437e1bdff8fa29d!8m2!3d34.168035!4d-111.9307474!9m1!1b1!16s%2Fg%2F11yf7q633j" target="_blank" rel="noopener">See all reviews on Google</a></p>
     </div>
   </section>
@@ -311,5 +312,12 @@
     <p>&copy; 2026 S&amp;M Landscape LLC</p>
   </div>
 </footer>
+<script>
+(function(){var g=document.querySelector('.review-grid');if(!g)return;var items=g.querySelectorAll('.review');var dots=document.querySelector('.review-dots');if(items.length<2)return;g.classList.remove('no-js');var i=0,t;function show(n){items[i].classList.remove('is-active');dots.children[i].removeAttribute('aria-current');i=(n+items.length)%items.length;items[i].classList.add('is-active');dots.children[i].setAttribute('aria-current','true');}
+items.forEach(function(it,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Show review '+(k+1));b.onclick=function(){show(k);start();};dots.appendChild(b);});
+items[0].classList.add('is-active');dots.children[0].setAttribute('aria-current','true');
+function start(){clearInterval(t);t=setInterval(function(){show(i+1);},7000);}
+g.addEventListener('mouseenter',function(){clearInterval(t);});g.addEventListener('mouseleave',start);start();})();
+</script>
 </body>
 </html>
