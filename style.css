@@ -145,10 +145,10 @@ a[href^="tel:"]{white-space:nowrap}
 .reviews-summary{margin:-.2rem 0 1.5rem;font-size:1.1rem;color:var(--muted)}
 .reviews-score{font-weight:700;color:var(--green)}
 .review-stars{color:#e0a800;letter-spacing:.08em}
-.review-grid{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr);max-width:760px}
-.review-grid .review{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
-.review-grid .review.is-active{opacity:1;visibility:visible}
-.review-grid.no-js .review{grid-area:auto;opacity:1;visibility:visible;margin-bottom:1rem}
+.review-grid{list-style:none;margin:0 auto;padding:0;position:relative;max-width:760px}
+.review-grid .review{position:absolute;top:0;left:0;right:0;opacity:0;visibility:hidden;transition:opacity .8s ease,visibility .8s}
+.review-grid .review.is-active{position:relative;opacity:1;visibility:visible}
+.review-grid.no-js .review{position:static;opacity:1;visibility:visible;margin-bottom:1rem}
 .review-grid .review blockquote{font-size:1.12rem}
 .review-dots{display:flex;justify-content:center;gap:.6rem;margin:1.1rem 0 0}
 .review-dots button{width:12px;height:12px;border-radius:50%;border:2px solid var(--green);background:transparent;padding:0;cursor:pointer}
