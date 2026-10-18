@@ -35,6 +35,7 @@ h3{font-size:1.2rem}
 .eyebrow{color:var(--lime);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;margin:0 0 .6rem}
 .lead{font-size:1.15rem;max-width:42rem;color:#eef5e6}
 .cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0 1.25rem}
+.slogan{font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:1.45rem;color:#e8f5d0;margin:-.25rem 0 1rem;letter-spacing:.01em}
 .tagline{color:var(--lime);font-weight:600;letter-spacing:.04em;margin:0}
 
 /* sections */
