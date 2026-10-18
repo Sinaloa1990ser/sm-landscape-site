@@ -148,94 +148,55 @@
     </div>
   </section>
 
-  <!--
-    MOCKUP ONLY: this proposal form is NOT connected to anything.
-    It has no real action URL and submitting is blocked (onsubmit="return false").
-    Nothing typed here is sent or stored. Wire it to a form service before going live.
-  -->
   <section class="proposal" id="proposal" aria-labelledby="proposal-h">
     <div class="wrap proposal-grid">
       <div class="proposal-intro">
-        <h2 id="proposal-h">Get a Free Proposal</h2>
-        <p>Tell us about your yard. We look over every request and send you a written proposal, usually after a quick call or visit. No prices are quoted on the site.</p>
+        <h2 id="proposal-h">Get a Free Quote</h2>
+        <p class="form-brand">S&amp;M Landscape</p>
+        <p class="form-slogan">Adding Value Through Quality Landscaping</p>
+        <p>Tell us about your yard. We look over every request and get back to you with a written proposal, usually after a quick call or visit. Serving Arizona: Maricopa, Chandler, Gilbert, Mesa, Queen&nbsp;Creek and San&nbsp;Tan&nbsp;Valley.</p>
         <p>Rather talk? Call or text <a href="tel:+14804012489">(480) 401-2489</a>.</p>
-        <p class="mockup-note">Mockup: form not connected yet</p>
       </div>
-      <form class="pform" action="#" method="post" enctype="multipart/form-data" onsubmit="return false;" aria-describedby="req-note">
+      <form class="pform" action="https://formsubmit.co/sergio@sm-landscape.com" method="POST" aria-describedby="req-note">
+        <input type="hidden" name="_subject" value="New quote request from sm-landscape.com">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="http://sm-landscape.com/thanks.html">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <p id="req-note" class="req-note">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
         <div class="field-row">
           <div class="field">
             <label for="f-name">Name <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
+            <input id="f-name" name="Name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
-            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <label for="f-contact">Phone or email <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-contact" name="Phone or email" type="text" autocomplete="tel" required>
           </div>
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="f-email">Email <span class="opt">(optional)</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-city">City</label>
-            <select id="f-city" name="city">
-              <option value="">Choose your city</option>
-              <option>Maricopa</option>
-              <option>Chandler</option>
-              <option>Gilbert</option>
-              <option>Mesa</option>
-              <option>Queen Creek</option>
-              <option>San Tan Valley</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <fieldset class="field checks">
-          <legend>What do you need? <span class="opt">(check any)</span></legend>
-          <div class="check-grid">
-            <label class="check"><input type="checkbox" name="service" value="Design"> Design</label>
-            <label class="check"><input type="checkbox" name="service" value="Install"> Install</label>
-            <label class="check"><input type="checkbox" name="service" value="Sod / turf"> Sod / turf</label>
-            <label class="check"><input type="checkbox" name="service" value="Desert conversion"> Desert conversion</label>
-            <label class="check"><input type="checkbox" name="service" value="Maintenance"> Maintenance</label>
-            <label class="check"><input type="checkbox" name="service" value="Cleanup"> Cleanup</label>
-            <label class="check"><input type="checkbox" name="service" value="Other"> Other</label>
-          </div>
-        </fieldset>
-        <div class="field-row">
-          <div class="field">
-            <label for="f-size">Approximate yard size</label>
-            <select id="f-size" name="yard_size">
-              <option value="">Choose a size</option>
-              <option>Under 500 sq ft</option>
-              <option>500&ndash;1,500 sq ft</option>
-              <option>1,500&ndash;3,000 sq ft</option>
-              <option>Over 3,000 sq ft</option>
-              <option>Not sure</option>
+            <label for="f-service">Service needed <span class="req" aria-hidden="true">*</span></label>
+            <select id="f-service" name="Service needed" required>
+              <option value="">Choose a service</option>
+              <option>Lawn care</option>
+              <option>Landscaping</option>
+              <option>Irrigation</option>
+              <option>Hardscaping</option>
+              <option>More than one / not sure</option>
             </select>
           </div>
           <div class="field">
-            <label for="f-timeline">Timeline</label>
-            <select id="f-timeline" name="timeline">
-              <option value="">Choose a timeline</option>
-              <option>As soon as possible</option>
-              <option>Within a month</option>
-              <option>1&ndash;3 months</option>
-              <option>Just planning</option>
-            </select>
+            <label for="f-date">Preferred date</label>
+            <input id="f-date" name="Preferred date" type="date">
           </div>
         </div>
         <div class="field">
-          <label for="f-photos">Photos of your yard <span class="opt">(optional)</span></label>
-          <input id="f-photos" name="photos" type="file" accept="image/*" multiple aria-describedby="photos-hint">
-          <p id="photos-hint" class="hint">You can add more than one. Please leave out house numbers, faces and license plates.</p>
+          <label for="f-address">Property address or area</label>
+          <input id="f-address" name="Property address or area" type="text" autocomplete="street-address" placeholder="Street address, or just your neighborhood or city">
         </div>
         <div class="field">
-          <label for="f-notes">Notes</label>
-          <textarea id="f-notes" name="notes" rows="4" aria-describedby="notes-hint"></textarea>
-          <p id="notes-hint" class="hint">What you'd like done, problem spots, anything we should know.</p>
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="Message" rows="4" placeholder="What you'd like done, problem spots, anything we should know."></textarea>
         </div>
         <button class="btn btn-submit" type="submit">Send my request</button>
         <p class="privacy">We only use this to reply about your yard.</p>
